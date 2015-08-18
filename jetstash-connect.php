@@ -3,7 +3,7 @@
  * Plugin Name: Jetstash Connect
  * Plugin URI: https://www.jetstash.com/jetstash-connect
  * Description: Dynamically pulls forms from Jetstash and integrates them via a shortcode into the theme.
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: Jetstash
  * Author URI: https://www.jetstash.com
  */
@@ -41,7 +41,7 @@ class JetstashConnect
    */
   function __construct()
   {
-    $this->version = "1.2.0";
+    $this->version = "1.3.2";
     $this->setMessages();
 
     add_action('admin_init', array($this, 'checkVersion'));
@@ -219,7 +219,7 @@ class JetstashConnect
    */
   function loadAdminPanel()
   {
-    add_menu_page('Jetstash Connect', 'Jetstash Connect', 'administrator', 'jetstash_connect', array(&$this,'loadAdminPanelTemplates'), 'dashicons-forms', 80);
+    add_menu_page('Jetstash Connect', 'Jetstash Connect', 'administrator', 'jetstash_connect', array(&$this,'loadAdminPanelTemplates'), 'dashicons-forms', 86.75309);
   }
 
   /**
@@ -495,7 +495,7 @@ class JetstashConnect
   */
 
   /**
-   * Build the structure 
+   * Build the structure
    *
    */
   public function buildStructure($flags)
@@ -542,7 +542,7 @@ class JetstashConnect
   {
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $endpoint);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 5);
     $data = curl_exec($curl);
     curl_close($curl);
@@ -555,7 +555,7 @@ class JetstashConnect
    *
    * @param string
    *
-   * @return 
+   * @return
    */
   protected function retrieveSingleFormFields($formId)
   {
